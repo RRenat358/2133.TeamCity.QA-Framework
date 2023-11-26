@@ -1,4 +1,5 @@
 
+###
 # получение токена CSRF для аутентификации
 GET http://user01:1111@localhost:8111/authenticationTest.html?csrf
 
@@ -6,6 +7,7 @@ GET http://user01:1111@localhost:8111/authenticationTest.html?csrf
 
 
 ###
+# создание проекта
 #POST http://user01:1111@192.168.1.42:8111/app/rest/projects
 POST http://user01:1111@localhost:8111/app/rest/projects
 Content-Type: application/json
@@ -20,6 +22,67 @@ X-TC-CSRF-Token:86882174-58c9-4e4b-93a4-6a2532809a1f
     "id": "id",
     "copyAllAssociatedSettings": true
 }
+###
+
+###
+# Create Build Configuration
+POST http://user01:1111@localhost:8111/app/rest/buildTypes
+Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token:c2b5a151-91e2-4b4a-9d96-6bd912807003
+
+{
+  "id": "id",
+  "name": "Print Hello Word",
+  "project": {
+    "id": "id"
+  },
+  "steps": {
+    "step": [
+      {
+        "name": "Print Hello",
+        "type": "simpleRunner",
+        "properties": {
+          "property": [
+            {
+              "name": "script.content",
+              "value": "echo 'Hello World!'"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+
+
+###
+# Run Build
+POST http://user01:1111@localhost:8111/app/rest/buildQueue
+Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+
+{
+  "buildType": {
+    "id": "id"
+  }
+}
+
+
+###
+# Run Build
+GET http://user01:1111@localhost:8111/app/rest/buildTypes/id:id
+Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+
+
+
+
+
+
+
 
 ###
 
