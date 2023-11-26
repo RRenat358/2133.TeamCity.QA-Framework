@@ -1,0 +1,192 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>pom</packaging>
+
+    <artifactId>2133.TeamCity.QA-Framework</artifactId>
+    <groupId>ru.rrenat358</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>TeamCity</module>
+    </modules>
+
+    <!--============================================================-->
+    <properties>
+        <java.version>17</java.version>
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <spring-boot.v>3.1.5</spring-boot.v>
+
+        <lombok.v>1.18.30</lombok.v>
+
+        <junit-jupiter.v>5.10.0</junit-jupiter.v>
+        <rest-assured.v>5.3.2</rest-assured.v>
+
+        <selenium-bom.v>4.15.0</selenium-bom.v>
+
+<!--        <selenium.v>4.13.0</selenium.v>-->
+<!--        <selenium.v>4.14.1</selenium.v>-->
+        <selenium.v>4.15.0</selenium.v>
+
+        <!--        <selenide.v>6.17.2</selenide.v>-->
+        <!--        <selenide.v>6.18.0</selenide.v>-->
+        <!--        <selenide.v>6.19.1</selenide.v>-->
+        <selenide.v>7.0.1</selenide.v>
+
+<!--        <webdrivermanager.v>5.4.1</webdrivermanager.v>-->
+<!--        <webdrivermanager.v>5.5.3</webdrivermanager.v>-->
+        <webdrivermanager.v>5.6.0</webdrivermanager.v>
+
+        <jackson.v>2.15.3</jackson.v>
+        <typesafe.v>1.4.3</typesafe.v>
+
+    </properties>
+
+
+    <!--============================================================-->
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.v}</version>
+                <!-- <type>pom</type>-->
+                <!-- <scope>import</scope>-->
+                <!-- <scope>provided</scope>-->
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-log4j2</artifactId>
+                <version>${spring-boot.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>${rest-assured.v}</version>
+            </dependency>
+
+            <!--
+                        <dependency>
+                            <groupId>org.assertj</groupId>
+                            <artifactId>assertj-core</artifactId>
+                        </dependency>
+            -->
+
+<!--
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-bom</artifactId>
+                <version>${selenium-bom.v}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+-->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.v}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${selenium.v}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chrome-driver</artifactId>
+                <version>${selenium.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codeborne</groupId>
+                <artifactId>selenide</artifactId>
+                <version>${selenide.v}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.bonigarcia</groupId>
+                <artifactId>webdrivermanager</artifactId>
+                <version>${webdrivermanager.v}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.v}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.typesafe</groupId>
+                <artifactId>config</artifactId>
+                <version>${typesafe.v}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!--============================================================-->
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>
