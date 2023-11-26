@@ -1,0 +1,16 @@
+
+#POST http://localhost:8111
+#POST http://192.168.1.42:8111/app/rest/projects
+POST http://user01:1111@192.168.1.42:8111/app/rest/projects
+Content-Type: application/json
+
+{
+    "parentProject": {
+        "locator": "locator"
+    },
+    "name": "name",
+    "id": "id",
+    "copyAllAssociatedSettings": true
+}
+
+###
