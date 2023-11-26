@@ -1,12 +1,20 @@
 
-#POST http://localhost:8111
-#POST http://192.168.1.42:8111/app/rest/projects
-POST http://user01:1111@192.168.1.42:8111/app/rest/projects
+# получение токена CSRF для аутентификации
+GET http://user01:1111@localhost:8111/authenticationTest.html?csrf
+
+
+
+
+###
+#POST http://user01:1111@192.168.1.42:8111/app/rest/projects
+POST http://user01:1111@localhost:8111/app/rest/projects
 Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token:86882174-58c9-4e4b-93a4-6a2532809a1f
 
 {
     "parentProject": {
-        "locator": "locator"
+        "locator": "_Root"
     },
     "name": "name",
     "id": "id",
@@ -14,3 +22,26 @@ Content-Type: application/json
 }
 
 ###
+
+
+
+
+#GET http://admin:admin@localhost:8111/authenticationTest.html?csrf - запрос на
+#POST http://admin:admin@localhost:8111/app/rest/projects - запрос на создание прожекта, подробнее тут.
+#POST http://admin:admin@localhost:8111/app/rest/buildTypes - запрос на создание конфигурации сборки, подробнее тут.
+#POST http://admin:admin@localhost:8111/app/rest/buildQueue - запрос на запуск сборки, подробнее тут.
+#GET http://admin:admin@localhost:8111/app/rest/builds - запрос на получение статуса сборки, подробнее тут.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
