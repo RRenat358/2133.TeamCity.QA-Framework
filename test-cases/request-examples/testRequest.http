@@ -1,13 +1,15 @@
 
 ###
-# получение токена CSRF для аутентификации
+### получение токена CSRF для аутентификации
+###
 GET http://user01:1111@localhost:8111/authenticationTest.html?csrf
 
 
 
 
 ###
-# создание проекта
+### создание проекта
+###
 #POST http://user01:1111@192.168.1.42:8111/app/rest/projects
 POST http://user01:1111@localhost:8111/app/rest/projects
 Content-Type: application/json
@@ -22,10 +24,12 @@ X-TC-CSRF-Token: 85873c74-920a-4ec8-aac2-b2b911b2882a
     "id": "id02",
     "copyAllAssociatedSettings": true
 }
-###
+
+
 
 ###
-# Create Build Configuration
+### Create Build Configuration
+###
 POST http://user01:1111@localhost:8111/app/rest/buildTypes
 Content-Type: application/json
 Accept: application/json
@@ -55,8 +59,10 @@ X-TC-CSRF-Token: 85873c74-920a-4ec8-aac2-b2b911b2882a
   }
 }
 
+
 ###
-# Create Build Configuration
+### Create Build Configuration
+###
 POST http://user01:1111@localhost:8111/app/rest/buildTypes
 Content-Type: application/json
 Accept: application/json
@@ -96,7 +102,18 @@ X-TC-CSRF-Token: 85873c74-920a-4ec8-aac2-b2b911b2882a
 
 
 ###
-# Run Build
+### Get Build Configuration
+###
+GET http://user01:1111@localhost:8111/app/rest/buildTypes/id:id
+Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+
+
+
+###
+### Run Build
+###
 POST http://user01:1111@localhost:8111/app/rest/buildQueue
 Content-Type: application/json
 Accept: application/json
@@ -110,19 +127,22 @@ X-TC-CSRF-Token: 1f1270a9-af78-4c3f-968f-2d0e423e14b7
 
 
 ###
-# Run Build
-GET http://user01:1111@localhost:8111/app/rest/buildTypes/id:id
+### Get Build Details
+###
+GET http://user01:1111@localhost:8111/app/rest/builds?locator=id:3
 Content-Type: application/json
 Accept: application/json
-X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+#X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
 
 
 ###
-### Get Build Details
-GET http://user01:1111@localhost:8111/app/rest/buildTypes/id:id
+### Get Build Details. v2
+###
+GET http://user01:1111@localhost:8111/app/rest/builds/id:3
 Content-Type: application/json
 Accept: application/json
-X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+#X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+
 
 
 
