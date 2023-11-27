@@ -12,14 +12,14 @@ GET http://user01:1111@localhost:8111/authenticationTest.html?csrf
 POST http://user01:1111@localhost:8111/app/rest/projects
 Content-Type: application/json
 Accept: application/json
-X-TC-CSRF-Token:86882174-58c9-4e4b-93a4-6a2532809a1f
+X-TC-CSRF-Token: 85873c74-920a-4ec8-aac2-b2b911b2882a
 
 {
     "parentProject": {
         "locator": "_Root"
     },
-    "name": "name",
-    "id": "id",
+    "name": "name02",
+    "id": "id02",
     "copyAllAssociatedSettings": true
 }
 ###
@@ -29,10 +29,10 @@ X-TC-CSRF-Token:86882174-58c9-4e4b-93a4-6a2532809a1f
 POST http://user01:1111@localhost:8111/app/rest/buildTypes
 Content-Type: application/json
 Accept: application/json
-X-TC-CSRF-Token:c2b5a151-91e2-4b4a-9d96-6bd912807003
+X-TC-CSRF-Token: 85873c74-920a-4ec8-aac2-b2b911b2882a
 
 {
-  "id": "id",
+  "id": "id02",
   "name": "Print Hello Word",
   "project": {
     "id": "id"
@@ -55,23 +55,70 @@ X-TC-CSRF-Token:c2b5a151-91e2-4b4a-9d96-6bd912807003
   }
 }
 
-
 ###
-# Run Build
-POST http://user01:1111@localhost:8111/app/rest/buildQueue
+# Create Build Configuration
+POST http://user01:1111@localhost:8111/app/rest/buildTypes
 Content-Type: application/json
 Accept: application/json
-X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+X-TC-CSRF-Token: 85873c74-920a-4ec8-aac2-b2b911b2882a
 
 {
-  "buildType": {
-    "id": "id"
+  "id": "id02",
+  "name": "Print Hello Word",
+  "project": {
+    "id": "id02"
+  },
+  "steps": {
+    "step": [
+      {
+        "name": "Print Hello",
+        "type": "simpleRunner",
+        "properties": {
+          "property": [
+            {
+              "name": "script.content",
+              "value": "echo 'Hello World!'"
+            },
+            {
+              "name": "teamcity.step.mode",
+              "value": "default"
+            },
+            {
+              "name": "use.custom.script",
+              "value": "true"
+            }
+          ]
+        }
+      }
+    ]
   }
 }
 
 
 ###
 # Run Build
+POST http://user01:1111@localhost:8111/app/rest/buildQueue
+Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token: 1f1270a9-af78-4c3f-968f-2d0e423e14b7
+
+{
+  "buildType": {
+    "id": "id02"
+  }
+}
+
+
+###
+# Run Build
+GET http://user01:1111@localhost:8111/app/rest/buildTypes/id:id
+Content-Type: application/json
+Accept: application/json
+X-TC-CSRF-Token: f5c0a7b6-8a6f-4c50-bcc5-8fbd0279e8d3
+
+
+###
+### Get Build Details
 GET http://user01:1111@localhost:8111/app/rest/buildTypes/id:id
 Content-Type: application/json
 Accept: application/json
