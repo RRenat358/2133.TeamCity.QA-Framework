@@ -1,9 +1,20 @@
 
 ###
+### Collection
+###
+#GET http://admin:admin@localhost:8111/authenticationTest.html?csrf - запрос на получение токена CSRF для аутентификации
+#POST http://admin:admin@localhost:8111/app/rest/projects - запрос на создание прожекта
+#POST http://admin:admin@localhost:8111/app/rest/buildTypes - запрос на создание конфигурации сборки
+#POST http://admin:admin@localhost:8111/app/rest/buildQueue - запрос на запуск сборки
+#GET http://admin:admin@localhost:8111/app/rest/builds - запрос на получение статуса сборки
+
+
+###########################################################
+
+###
 ### получение токена CSRF для аутентификации
 ###
 GET http://user01:1111@localhost:8111/authenticationTest.html?csrf
-
 
 
 
@@ -154,13 +165,6 @@ Accept: application/json
 ###
 
 
-
-
-#GET http://admin:admin@localhost:8111/authenticationTest.html?csrf - запрос на получение токена CSRF для аутентификации
-#POST http://admin:admin@localhost:8111/app/rest/projects - запрос на создание прожекта
-#POST http://admin:admin@localhost:8111/app/rest/buildTypes - запрос на создание конфигурации сборки
-#POST http://admin:admin@localhost:8111/app/rest/buildQueue - запрос на запуск сборки
-#GET http://admin:admin@localhost:8111/app/rest/builds - запрос на получение статуса сборки
 
 
 
