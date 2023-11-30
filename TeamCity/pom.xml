@@ -2,19 +2,23 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ru.rrenat358</groupId>
-  <artifactId>TeamCity</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <parent>
+        <artifactId>2133.TeamCity.QA-Framework</artifactId>
+        <groupId>ru.rrenat358</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!--        <relativePath/>-->
+    </parent>
 
-  <name>TeamCity</name>
+    <artifactId>TeamCity</artifactId>
 
-<!--
-  <dependencies>
-    <dependency>
+<!--  <name>TeamCity</name>-->
 
-    </dependency>
-  </dependencies>
--->
+      <dependencies>
+          <dependency>
+              <groupId>io.rest-assured</groupId>
+              <artifactId>rest-assured</artifactId>
+              <scope>test</scope>
+          </dependency>
+      </dependencies>
 
 </project>
