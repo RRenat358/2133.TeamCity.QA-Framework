@@ -2,7 +2,7 @@ package ru.rrenat358;
 
 
 
-public class AppTest {
+public class BaseTest {
 
 
 
