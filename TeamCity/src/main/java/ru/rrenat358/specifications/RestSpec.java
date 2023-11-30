@@ -12,8 +12,8 @@ import ru.rrenat358.configs.Config;
 import ru.rrenat358.models.User;
 
 
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class RestSpec {
 
     private RequestSpecBuilder requestBuilder() {
