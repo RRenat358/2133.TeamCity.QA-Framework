@@ -8,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import ru.rrenat358.models.User;
 
 
 @NoArgsConstructor
@@ -30,10 +31,15 @@ public class RestSpec {
     }
 
 
-    public RequestSpecification AuthSpec() {
+    public RequestSpecification AuthSpec(User user) {
         var requestBuilder = RestSpec.getInstance().requestBuilder();
         requestBuilder.setContentType(ContentType.JSON);
         requestBuilder.setAccept(ContentType.JSON);
+        requestBuilder.setBaseUri("https://" +
+                                  user.getUsername() + ":" +
+                                  user.getPassword() + "@" +
+
+                                  );
 
 
 
