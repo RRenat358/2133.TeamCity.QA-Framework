@@ -21,7 +21,7 @@ public class BuildConfigurationTest extends BaseApiTest {
 //        String token = RestAssured.get("http://user01:1111@localhost:8111/authenticationTest.html?csrf")
         String token = RestAssured
                 .given()
-                .spec(RestSpec.getInstance().AuthSpec(user))
+                .spec(RestSpec.getInstance().authSpec(user))
                 .get("/authenticationTest.html?csrf")
                 .then().assertThat().statusCode(HttpStatus.SC_OK)
                 .extract().asString();

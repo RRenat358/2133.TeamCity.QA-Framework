@@ -1,15 +1,10 @@
 package ru.rrenat358.configs;
 
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-//@NoArgsConstructor
-@AllArgsConstructor
+
 public class Config {
 
     public static final String COFIG_PROPERTIES = "config.properties";
@@ -24,14 +19,13 @@ public class Config {
 
 
     private void loadProperties(String fileName)  {
-        InputStream inputStream = Config.class.getClassLoader().getResourceAsStream(fileName);
-
         try {
+            InputStream inputStream = Config.class.getClassLoader().getResourceAsStream(fileName);
             properties.load(inputStream);
         } catch (IOException e) {
+            System.err.println("Error during file reading " + fileName);
             throw new RuntimeException(e);
         }
-
     }
 
 
