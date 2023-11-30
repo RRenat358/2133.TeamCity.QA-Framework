@@ -8,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import ru.rrenat358.configs.Config;
 import ru.rrenat358.models.User;
 
 
@@ -38,12 +39,9 @@ public class RestSpec {
         requestBuilder.setBaseUri("https://" +
                                   user.getUsername() + ":" +
                                   user.getPassword() + "@" +
-
+                                  Config.getInstance().getProperties("host")
                                   );
-
-
-
-
+        return requestBuilder().build();
     }
 
 
