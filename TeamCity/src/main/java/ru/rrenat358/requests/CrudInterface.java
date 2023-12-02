@@ -2,13 +2,13 @@ package ru.rrenat358.requests;
 
 public interface CrudInterface {
 
-    public Object create();
+    public Object create(Object object);
 
     public Object get(String string);
 
-    public Object update(String string);
+    public Object update(Object object);
 
-    public Object delete(String string);
+    public Object delete(Object object);
 
 
 }
