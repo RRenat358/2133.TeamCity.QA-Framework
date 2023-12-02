@@ -1,12 +1,28 @@
 package ru.rrenat358.requests.unchecked;
 
+import io.restassured.response.Response;
+import ru.rrenat358.models.User;
 import ru.rrenat358.requests.CrudInterface;
+import ru.rrenat358.specifications.RestSpec;
+
+import static io.restassured.RestAssured.*;
 
 public class ProjectRequest implements CrudInterface {
 
+    public static final String PROJECT_ENDPOINT = "/app/rest/projects";
+
+    private User user;
+
+    public ProjectRequest(User user) {
+        this.user = user;
+    }
+
     @Override
-    public Object create(Object object) {
-        return null;
+    public Response create(Object object) {
+        return given()
+                .spec(RestSpec.getInstance().authSpec(user))
+                .body(object)
+                .post(PROJECT_ENDPOINT);
     }
 
     @Override
