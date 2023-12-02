@@ -7,13 +7,13 @@ import ru.rrenat358.specifications.RestSpec;
 
 import static io.restassured.RestAssured.*;
 
-public class ProjectRequest implements CrudInterface {
+public class UncheckedRequestProject implements CrudInterface {
 
     public static final String PROJECT_ENDPOINT = "/app/rest/projects";
 
     private User user;
 
-    public ProjectRequest(User user) {
+    public UncheckedRequestProject(User user) {
         this.user = user;
     }
 
