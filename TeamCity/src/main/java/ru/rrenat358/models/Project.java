@@ -9,14 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NewProjectDescription {
+public class Project {
 
     private String id;
     private String name;
-
-    private Project parentProject;
-
-    private Boolean copyAllAssociatedSettings;
-
+    private String parentProjectId;
+    private String locator;
+    
 
 }
