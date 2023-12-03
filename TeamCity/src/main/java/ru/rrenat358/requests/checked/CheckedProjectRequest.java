@@ -1,28 +1,26 @@
 package ru.rrenat358.requests.checked;
 
-import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import ru.rrenat358.models.Project;
 import ru.rrenat358.models.User;
 import ru.rrenat358.requests.CrudInterface;
-import ru.rrenat358.requests.unchecked.UncheckedRequestProject;
-import ru.rrenat358.specifications.RestSpec;
+import ru.rrenat358.requests.unchecked.UncheckedProjectRequest;
 
 import static io.restassured.RestAssured.given;
 
-public class CheckedRequestProject implements CrudInterface {
+public class CheckedProjectRequest implements CrudInterface {
 
 //    public static final String PROJECT_ENDPOINT = "/app/rest/projects";
 
     private User user;
 
-    public CheckedRequestProject(User user) {
+    public CheckedProjectRequest(User user) {
         this.user = user;
     }
 
     @Override
     public Project create(Object object) {
-        return new UncheckedRequestProject(user).create(object)
+        return new UncheckedProjectRequest(user).create(object)
                 .then()
                 .assertThat().statusCode(HttpStatus.SC_OK)
                 .extract().as(Project.class);
