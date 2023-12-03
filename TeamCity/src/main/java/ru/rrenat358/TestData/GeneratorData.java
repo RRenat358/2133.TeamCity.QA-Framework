@@ -20,9 +20,14 @@ public class GeneratorData {
                 .parentProject(Project.builder()
                         .locator("_Root")
                         .build())
-                .name("Project-02")
-                .id("P02")
+                .name(RandomData.getString())
+                .id(RandomData.getString())
                 .copyAllAssociatedSettings(true)
+                .build();
+
+        return EntityData.builder()
+                .user(user)
+                .newProjectDescription(projectDescription)
                 .build();
 
 
