@@ -4,15 +4,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import ru.rrenat358.models.NewProjectDescription;
-import ru.rrenat358.models.Project;
 import ru.rrenat358.models.User;
-
+import ru.rrenat358.requests.unchecked.UncheckedProjectRequest;
 
 
 @Getter
 @Setter
 @Builder
-public class EntityData {
+public class DataEntity {
 
     private User user;
 
@@ -21,4 +20,8 @@ public class EntityData {
     public NewProjectDescription newProjectDescription;
 
 
+
+    public void deleteNewProjectDescription() {
+        new UncheckedProjectRequest(user).delete(newProjectDescription.getId());
+    }
 }

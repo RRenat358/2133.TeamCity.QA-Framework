@@ -36,8 +36,10 @@ public class UncheckedProjectRequest implements CrudInterface {
     }
 
     @Override
-    public Object delete(Object object) {
-        return null;
+    public Response delete(Object object) {
+        return given()
+                .spec(RestSpec.getInstance().authSpec(user))
+                .delete(PROJECT_ENDPOINT + "/id" + object);
     }
 
 

@@ -1,16 +1,9 @@
 package ru.rrenat358;
 
 
-import io.restassured.RestAssured;
-import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
-import ru.rrenat358.TestData.GeneratorData;
-import ru.rrenat358.models.NewProjectDescription;
-import ru.rrenat358.models.Project;
-import ru.rrenat358.models.User;
-import ru.rrenat358.requests.checked.AuthRequest;
+import ru.rrenat358.TestData.DataGenerator;
 import ru.rrenat358.requests.checked.CheckedProjectRequest;
-import ru.rrenat358.specifications.RestSpec;
 
 public class BuildConfigurationTest extends BaseApiTest {
 
@@ -42,11 +35,11 @@ public class BuildConfigurationTest extends BaseApiTest {
 */
 
 
-        var generarotData = new GeneratorData().entityDataGenerator();
+//        var generarotData = new DataGenerator().entityDataGenerator();
 
         var project = new CheckedProjectRequest(
-                generarotData.getUser())
-                .create(generarotData.newProjectDescription);
+                dataEntity.getUser())
+                .create(dataEntity.newProjectDescription);
 
     }
 

@@ -2,7 +2,7 @@ package ru.rrenat358.TestData;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-public class RandomData {
+public class DataRandomizer {
 
     public static final int LENGTH_3 = 3;
     public static final int LENGTH_5 = 5;

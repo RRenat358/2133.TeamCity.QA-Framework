@@ -38,7 +38,11 @@ public class CheckedProjectRequest implements CrudInterface {
 
     @Override
     public Object delete(Object object) {
-        return null;
+        return new UncheckedProjectRequest(user)
+                .delete(object)
+                .then()
+                .assertThat().statusCode(HttpStatus.SC_OK)
+                .extract().asString();
     }
 
 

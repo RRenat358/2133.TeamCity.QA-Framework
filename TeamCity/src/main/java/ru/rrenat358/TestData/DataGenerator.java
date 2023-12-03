@@ -5,9 +5,9 @@ import ru.rrenat358.models.NewProjectDescription;
 import ru.rrenat358.models.Project;
 import ru.rrenat358.models.User;
 
-public class GeneratorData {
+public class DataGenerator {
 
-    public EntityData entityDataGenerator() {
+    public DataEntity entityDataGenerator() {
 
         var user = User.builder()
                 .username("user01")
@@ -20,12 +20,12 @@ public class GeneratorData {
                 .parentProject(Project.builder()
                         .locator("_Root")
                         .build())
-                .name(RandomData.getString())
-                .id(RandomData.getString())
+                .name(DataRandomizer.getString_Test_5_AZ())
+                .id(DataRandomizer.getString_Test_3_09())
                 .copyAllAssociatedSettings(true)
                 .build();
 
-        return EntityData.builder()
+        return DataEntity.builder()
                 .user(user)
                 .newProjectDescription(projectDescription)
                 .build();
