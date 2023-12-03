@@ -33,6 +33,7 @@
         <selenide.v>7.0.1</selenide.v>
 
         <jackson.v>2.15.3</jackson.v>
+        <google-gson.v>2.10.1</google-gson.v>
         <typesafe.v>1.4.3</typesafe.v>
 
     </properties>
@@ -96,6 +97,12 @@
                 <version>${jackson.v}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${google-gson.v}</version>
             </dependency>
 
             <dependency>
