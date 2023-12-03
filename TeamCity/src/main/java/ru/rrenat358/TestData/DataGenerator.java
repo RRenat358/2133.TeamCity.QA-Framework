@@ -7,6 +7,7 @@ import ru.rrenat358.models.User;
 
 public class DataGenerator {
 
+
     public DataEntity entityDataGenerator() {
 
         var user = User.builder()
@@ -29,8 +30,6 @@ public class DataGenerator {
                 .user(user)
                 .newProjectDescription(projectDescription)
                 .build();
-
-
 
     }
 
