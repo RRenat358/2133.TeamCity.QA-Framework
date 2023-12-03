@@ -15,7 +15,7 @@ public class BaseApiTest extends BaseTest {
 
     @BeforeEach
     public  void setupTest() {
-        dataEntity = dataGenerator.entityDataGenerator();
+        dataEntity = new DataGenerator().entityDataGenerator();
     }
 
 

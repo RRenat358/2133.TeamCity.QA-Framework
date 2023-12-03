@@ -15,6 +15,8 @@ public class Project {
     private String name;
     private String parentProjectId;
     private String locator;
+
+//    private Boolean virtual;
     
 
 }
