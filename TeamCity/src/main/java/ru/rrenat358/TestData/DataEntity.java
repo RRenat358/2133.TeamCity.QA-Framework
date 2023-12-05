@@ -1,6 +1,7 @@
 package ru.rrenat358.TestData;
 
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import ru.rrenat358.models.NewProjectDescription;
@@ -8,8 +9,7 @@ import ru.rrenat358.models.User;
 import ru.rrenat358.requests.unchecked.UncheckedProjectRequest;
 
 
-@Getter
-@Setter
+@Data
 @Builder
 public class DataEntity {
 

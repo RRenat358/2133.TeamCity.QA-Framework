@@ -1,12 +1,12 @@
 package ru.rrenat358.requests;
 
-public interface CrudInterface {
+public interface CrudProject {
 
     public Object create(Object object);
 
-    public Object get(String string);
+    public Object get(Object string);
 
-    public Object update(Object object);
+    public Object update(Object id, Object object);
 
     public Object delete(Object object);
 
