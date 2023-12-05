@@ -12,7 +12,7 @@ public class CheckedProjectRequest implements CrudProject {
 
 //    public static final String PROJECT_ENDPOINT = "/app/rest/projects";
 
-    private User user;
+    private final User user;
 
     public CheckedProjectRequest(User user) {
         this.user = user;
@@ -24,7 +24,8 @@ public class CheckedProjectRequest implements CrudProject {
                 .create(object)
                 .then()
                 .assertThat().statusCode(HttpStatus.SC_OK)
-                .extract().as(Project.class);
+                .extract().as(Project.class)
+                ;
     }
 
     @Override
@@ -55,7 +56,8 @@ public class CheckedProjectRequest implements CrudProject {
                 .delete(object)
                 .then()
                 .assertThat().statusCode(HttpStatus.SC_OK)
-                .extract().asString();
+                .extract().asString()
+                ;
     }
 
 
