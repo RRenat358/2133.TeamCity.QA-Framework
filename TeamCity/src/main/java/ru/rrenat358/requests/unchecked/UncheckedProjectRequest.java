@@ -27,12 +27,18 @@ public class UncheckedProjectRequest implements CrudInterface {
 
     @Override
     public Object get(String string) {
-        return null;
+        return given()
+                .spec(RestSpec.getInstance().authSpec(user))
+                .get(PROJECT_ENDPOINT + "/id:" + string);
+
     }
 
     @Override
     public Object update(Object object) {
-        return null;
+        return given()
+                .spec(RestSpec.getInstance().authSpec(user))
+                .body(object)
+                .put(PROJECT_ENDPOINT + "/id:" + object);
     }
 
     @Override
