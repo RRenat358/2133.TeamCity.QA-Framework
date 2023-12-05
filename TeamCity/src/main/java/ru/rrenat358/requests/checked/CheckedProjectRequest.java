@@ -28,17 +28,25 @@ public class CheckedProjectRequest implements CrudProject {
     }
 
     @Override
-    public Object get(Object string) {
-        return null;
+    public Object get(Object object) {
+        return new UncheckedProjectRequest(user)
+                .get(object)
+                .then().assertThat().statusCode(HttpStatus.SC_OK)
+                .extract().as(Project.class);
     }
 
+
     @Override
-    public Project update(Object id, Object object) {
+    public Object update(Object id, Object object) {
         return new UncheckedProjectRequest(user)
                 .update(id, object)
-                .then().assertThat()
-                .statusCode(HttpStatus.SC_OK)
-                .extract().as(Project.class);
+//                .equals(HttpStatus.SC_OK)
+//                .then()
+//                .toString()
+//                .assertThat()
+//                .statusCode(HttpStatus.SC_OK)
+//                .extract().as(Project.class)
+                ;
     }
 
     @Override

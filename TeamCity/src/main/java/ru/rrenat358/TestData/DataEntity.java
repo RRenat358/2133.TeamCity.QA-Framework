@@ -16,7 +16,6 @@ public class DataEntity {
     private User user;
 
 //    private Project project;
-
     public NewProjectDescription newProjectDescription;
 
 

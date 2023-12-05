@@ -26,7 +26,7 @@ public class UncheckedProjectRequest implements CrudProject {
     }
 
     @Override
-    public Object get(Object string) {
+    public Response  get(Object string) {
         return given()
                 .spec(RestSpec.getInstance().authSpec(user))
                 .get(PROJECT_ENDPOINT + "/id:" + string);
