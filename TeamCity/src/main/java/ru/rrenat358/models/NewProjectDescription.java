@@ -11,11 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class NewProjectDescription {
 
-    private String id;
-    private String name;
-
     private Project parentProject;
-
+    private String name;
+    private String id;
     private Boolean copyAllAssociatedSettings;
 
 

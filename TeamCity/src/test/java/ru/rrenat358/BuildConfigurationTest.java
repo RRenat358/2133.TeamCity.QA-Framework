@@ -39,6 +39,7 @@ public class BuildConfigurationTest extends BaseApiTest {
 
         var project = new CheckedProjectRequest(
                 dataEntity.getUser())
+//                .create(dataEntity.getNewProjectDescription());
                 .create(dataEntity.getNewProjectDescription());
 
         softAssertions.assertThat(
